@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Style Avenue — premium women's fashion, elegant Pakistani clothing and affordable luxury.">
+<title>STYLE AVENUE — Women's Fashion</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap');
+:root{--ivory:#f7f3ed;--charcoal:#191817;--gold:#c8a96b;--rose:#c9a6a0;--mustard:#c79a2b}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;background:var(--ivory);color:var(--charcoal);overflow-x:hidden}
+a{text-decoration:none;color:inherit}
+button{font:inherit;cursor:pointer;border:0}
+.announce{background:var(--charcoal);color:#fff;text-align:center;padding:9px;font-size:11px;letter-spacing:2px}
+nav{position:fixed;top:34px;left:0;width:100%;z-index:50;padding:18px 5%;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;transition:.35s}
+nav.scrolled{top:0;background:rgba(247,243,237,.88);backdrop-filter:blur(16px);box-shadow:0 8px 30px rgba(0,0,0,.06)}
+.logo{font-family:'Playfair Display',serif;font-size:22px;letter-spacing:4px}
+.navlinks{display:flex;gap:28px;font-size:12px;text-transform:uppercase;letter-spacing:1.5px}
+.navright{justify-self:end;display:flex;gap:18px;font-size:13px}
+.hero{min-height:100vh;position:relative;display:grid;place-items:center;overflow:hidden;background:radial-gradient(circle at 70% 45%,#e9d9bb,transparent 28%),var(--ivory)}
+.hero:before{content:"";position:absolute;width:48vw;height:48vw;border:1px solid rgba(200,169,107,.35);border-radius:50%;right:-10vw;top:16%;animation:spin 30s linear infinite}
+.hero-content{position:relative;z-index:3;text-align:center;max-width:850px;padding:120px 20px 50px}
+.eyebrow{font-size:11px;letter-spacing:5px;text-transform:uppercase;margin-bottom:18px}
+h1,h2,h3{font-family:'Playfair Display',serif}
+h1{font-size:clamp(48px,8vw,105px);line-height:.92;font-weight:600;letter-spacing:-3px}
+.hero p{max-width:600px;margin:25px auto;font-size:16px;line-height:1.8;color:#625d57}
+.ctas{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.btn{padding:15px 25px;text-transform:uppercase;letter-spacing:2px;font-size:11px;border:1px solid var(--charcoal);transition:.3s}
+.btn.dark{background:var(--charcoal);color:#fff}
+.btn:hover{transform:translateY(-3px);box-shadow:0 12px 25px rgba(0,0,0,.12)}
+.floating-card{position:absolute;z-index:2;right:10%;bottom:12%;width:230px;height:310px;background:linear-gradient(145deg,#b68a28,#e6c36c,#9b711c);border-radius:120px 120px 20px 20px;transform:rotate(7deg);box-shadow:25px 35px 60px rgba(50,35,10,.22);animation:float 5s ease-in-out infinite}
+.floating-card:after{content:"STYLE AVENUE";position:absolute;bottom:24px;left:0;width:100%;text-align:center;color:#fff;font-family:'Playfair Display';font-size:13px;letter-spacing:3px}
+.orbit{position:absolute;width:290px;height:290px;border:1px solid rgba(25,24,23,.18);border-radius:50%;right:7%;bottom:13%;animation:spin 18s linear infinite}
+section{padding:110px 7%}
+.section-head{max-width:760px;margin-bottom:50px}
+.section-head .eyebrow{color:#8b7449}
+.section-head h2{font-size:clamp(38px,5vw,68px);line-height:1}
+.section-head p{margin-top:18px;color:#716a63;line-height:1.8}
+.intro{text-align:center;background:var(--charcoal);color:#fff;padding:150px 8%;position:relative;overflow:hidden}
+.intro h2{font-size:clamp(45px,7vw,95px)}
+.intro p{margin-top:20px;color:#c9c1b6}
+.intro:after{content:"";position:absolute;width:500px;height:500px;border:1px solid rgba(200,169,107,.3);border-radius:50%;left:-220px;top:-250px}
+.collections{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.collection{min-height:420px;position:relative;overflow:hidden;background:#ddd;border-radius:2px}
+.collection:nth-child(1){background:linear-gradient(150deg,#b79553,#ead9b6)}
+.collection:nth-child(2){background:linear-gradient(150deg,#b98783,#eed8d2)}
+.collection:nth-child(3){background:linear-gradient(150deg,#2a2928,#9e8971)}
+.collection:nth-child(4){background:linear-gradient(150deg,#d9c9ae,#f3eee7)}
+.collection:before{content:"";position:absolute;width:150px;height:330px;background:rgba(255,255,255,.18);left:50%;top:45px;transform:translateX(-50%) rotate(8deg);border-radius:80px 80px 10px 10px;transition:.6s}
+.collection:hover:before{transform:translateX(-50%) rotate(0) scale(1.08)}
+.collection-content{position:absolute;bottom:0;padding:28px;color:#fff;z-index:2}
+.collection h3{font-size:28px}
+.collection p{font-size:12px;margin:7px 0 15px;opacity:.9}
+.featured{display:grid;grid-template-columns:1.1fr .9fr;gap:70px;align-items:center}
+.product-stage{height:620px;position:relative;background:radial-gradient(circle,#ead7a9,#b58a31 45%,#6f521e);display:grid;place-items:center;overflow:hidden}
+.product-stage .suit{width:230px;height:450px;background:linear-gradient(145deg,#b78718,#e3bf59,#a8790d);clip-path:polygon(30% 0,70% 0,88% 30%,75% 50%,82% 100%,18% 100%,25% 50%,12% 30%);filter:drop-shadow(25px 30px 25px rgba(0,0,0,.3));animation:float 5s ease-in-out infinite}
+.product-stage:after{content:"PREMIUM LAWN";position:absolute;bottom:35px;color:#fff;letter-spacing:4px;font-size:11px}
+.product-info h2{font-size:55px;line-height:1.05}
+.product-info .desc{color:#6c665f;line-height:1.8;margin:22px 0}
+.price{font-size:28px;font-weight:700;margin:22px 0}.old{text-decoration:line-through;color:#999;font-size:15px;margin-left:8px}.badge{display:inline-block;background:var(--charcoal);color:#fff;padding:7px 12px;font-size:10px;letter-spacing:2px}
+.products{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.card{background:#fff;padding:0 0 22px;position:relative;transition:.35s}
+.card:hover{transform:translateY(-8px)}
+.card-img{height:420px;display:grid;place-items:center;position:relative;overflow:hidden;background:linear-gradient(145deg,#d5bd91,#f3e6d0)}
+.card:nth-child(2) .card-img{background:linear-gradient(145deg,#d5a6a3,#f0ded8)}
+.card:nth-child(3) .card-img{background:linear-gradient(145deg,#242220,#71665d)}
+.card:nth-child(4) .card-img{background:linear-gradient(145deg,#eee6d7,#b9a78c)}
+.card:nth-child(5) .card-img{background:linear-gradient(145deg,#c5ad74,#f1dfae)}
+.card:nth-child(6) .card-img{background:linear-gradient(145deg,#7c2d31,#d58b7d)}
+.card-img:after{content:"";width:145px;height:300px;background:rgba(255,255,255,.23);border-radius:70px 70px 10px 10px;transform:rotate(7deg);transition:.5s}
+.card:hover .card-img:after{transform:rotate(0) scale(1.08)}
+.wish{position:absolute;top:15px;right:15px;background:#fff;width:38px;height:38px;border-radius:50%;z-index:2}
+.card-body{padding:20px}.card-body h3{font-size:22px}.card-body p{font-size:12px;color:#777;margin:7px 0}.card-price{font-weight:700}
+.detail{background:#eee6d9}
+.detail-wrap{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.detail-visual{height:560px;background:radial-gradient(circle,#e7c86e,#8f671f);display:grid;place-items:center;position:relative;overflow:hidden}
+.detail-visual .suit{width:210px;height:420px;background:linear-gradient(145deg,#b78718,#e5c15b);clip-path:polygon(30% 0,70% 0,88% 30%,75% 50%,82% 100%,18% 100%,25% 50%,12% 30%);animation:float 4s ease-in-out infinite}
+.hotspots{display:grid;gap:18px}.hotspot{padding:18px;background:#fff;border-left:2px solid var(--gold);transition:.3s}.hotspot:hover{transform:translateX(8px)}.hotspot strong{font-family:'Playfair Display';font-size:20px}.hotspot p{font-size:13px;color:#777;margin-top:5px;line-height:1.5}
+.features{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}.feature{text-align:center;padding:35px 20px;border-top:1px solid #d6cec4}.feature span{font-size:28px}.feature h3{margin:15px 0 8px;font-size:22px}.feature p{font-size:13px;color:#777;line-height:1.6}
+.story{display:grid;grid-template-columns:1fr 1fr;min-height:620px}.story-img{background:linear-gradient(145deg,#c8a96b,#765c31);min-height:500px}.story-copy{background:#191817;color:#fff;padding:80px;display:flex;flex-direction:column;justify-content:center}.story-copy h2{font-size:55px;line-height:1.05}.story-copy p{color:#bbb;margin:25px 0;line-height:1.8}.story-copy .btn{border-color:#fff;color:#fff;width:max-content}
+.offer{text-align:center;background:var(--rose);padding:100px 7%}.offer h2{font-size:65px}.offer p{margin:15px}.offer .discount{font-family:'Playfair Display';font-size:28px;color:#6f4f4a;margin:25px}
+.reviews{background:#fff}.review-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}.review{padding:35px;border:1px solid #e8e1d8}.stars{letter-spacing:4px;color:#b18b48}.review p{margin:18px 0;line-height:1.7;color:#555;font-style:italic}
+.social-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:8px}.social{height:190px;background:linear-gradient(145deg,#c8a96b,#eadfce);transition:.4s}.social:nth-child(2){background:linear-gradient(145deg,#c49a9c,#ead5d3)}.social:nth-child(3){background:linear-gradient(145deg,#393633,#a29a90)}.social:nth-child(4){background:linear-gradient(145deg,#e1d1b7,#f8f3eb)}.social:nth-child(5){background:linear-gradient(145deg,#997b48,#d9c08a)}.social:nth-child(6){background:linear-gradient(145deg,#70343a,#c78883)}.social:hover{transform:scale(.96)}
+.contact{background:#191817;color:#fff;text-align:center}.contact h2{font-size:70px}.contact p{color:#bbb;margin:18px}.phone{font-size:25px;color:var(--gold);margin:22px}.footer{background:#111;color:#aaa;padding:50px 7%;display:grid;grid-template-columns:2fr repeat(3,1fr);gap:40px}.footer h3{color:#fff;margin-bottom:15px}.footer a,.footer p{display:block;font-size:12px;margin:9px 0}.newsletter{display:flex;margin-top:15px}.newsletter input{padding:12px;border:0;flex:1}.newsletter button{padding:12px;background:var(--gold)}
+.reveal{opacity:0;transform:translateY(35px);transition:1s}.reveal.visible{opacity:1;transform:none}
+@keyframes float{50%{transform:translateY(-18px) rotate(3deg)}}@keyframes spin{to{transform:rotate(360deg)}}
+@media(max-width:900px){nav{grid-template-columns:1fr auto;top:34px}.navlinks{display:none}.navright{gap:10px}.hero{min-height:850px}.floating-card{right:6%;bottom:10%;width:150px;height:220px}.orbit{right:0;bottom:9%;width:200px;height:200px}.collections,.features{grid-template-columns:repeat(2,1fr)}.featured,.detail-wrap,.story{grid-template-columns:1fr}.products{grid-template-columns:repeat(2,1fr)}.social-grid{grid-template-columns:repeat(3,1fr)}.footer{grid-template-columns:1fr 1fr}.story-copy{padding:55px 8%}}
+@media(max-width:600px){section{padding:75px 5%}.hero-content{padding-top:130px}.hero p{font-size:14px}.collections,.products,.features,.review-grid{grid-template-columns:1fr}.collection{min-height:330px}.product-stage,.detail-visual{height:470px}.product-info h2,.story-copy h2,.offer h2,.contact h2{font-size:42px}.social-grid{grid-template-columns:repeat(2,1fr)}.social{height:150px}.footer{grid-template-columns:1fr}.navright span{display:none}}
+</style>
+</head>
+<body>
+<div class="announce">FREE DELIVERY AVAILABLE • NEW COLLECTION NOW LIVE</div>
+<nav id="nav"><a class="logo" href="#home">STYLE AVENUE</a><div class="navlinks"><a href="#home">Home</a><a href="#shop">Shop</a><a href="#new">New Arrivals</a><a href="#collections">Collections</a><a href="#about">About</a></div><div class="navright"><span>⌕</span><span>♡</span><span>♙</span><span>🛍</span></div></nav>
+
+<main>
+<section class="hero" id="home">
+<div class="orbit"></div><div class="floating-card"></div>
+<div class="hero-content reveal">
+<div class="eyebrow">Women's Fashion • Pakistan</div>
+<h1>ELEVATE YOUR<br>EVERYDAY STYLE</h1>
+<p>Discover premium women's fashion designed for elegance, confidence and effortless style.</p>
+<div class="ctas"><a class="btn dark" href="#shop">Shop Collection</a><a class="btn" href="#new">Explore New Arrivals</a></div>
+</div></section>
+
+<section class="intro"><div class="reveal"><div class="eyebrow">Style Avenue</div><h2>WHERE STYLE<br>MEETS ELEGANCE</h2><p>Curated fashion for the modern woman.</p></div></section>
+
+<section id="collections"><div class="section-head reveal"><div class="eyebrow">Curated for you</div><h2>THE SIGNATURE COLLECTION</h2><p>Timeless silhouettes. Premium details. Effortless elegance.</p></div>
+<div class="collections">
+<div class="collection reveal"><div class="collection-content"><h3>Lawn Collection</h3><p>Elegant embroidered lawn suits.</p><a class="btn" href="#shop">Explore</a></div></div>
+<div class="collection reveal"><div class="collection-content"><h3>3-Piece</h3><p>Complete looks for effortless style.</p><a class="btn" href="#shop">Explore</a></div></div>
+<div class="collection reveal"><div class="collection-content"><h3>Festive Edit</h3><p>Statement outfits for special occasions.</p><a class="btn" href="#shop">Explore</a></div></div>
+<div class="collection reveal"><div class="collection-content"><h3>Everyday</h3><p>Comfortable fashion with premium finishing.</p><a class="btn" href="#shop">Explore</a></div></div>
+</div></section>
+
+<section class="featured"><div class="product-stage reveal"><div class="suit"></div></div><div class="product-info reveal"><div class="eyebrow">Featured Product</div><h2>Luxury Mustard 3-Piece Lawn Suit</h2><p class="desc">Premium Lawn • Luxury Lawn Shirt • Laser-Cut Embroidered Dupatta • Dyed Trouser</p><span class="badge">LIMITED STOCK</span><div class="price">Rs. 2,499/- <span class="old">Rs. 3,499/-</span></div><div class="ctas" style="justify-content:flex-start"><a class="btn dark" target="_blank" href="https://wa.me/923254809250?text=Hello%20Style%20Avenue%2C%20I%20would%20like%20to%20order%20the%20Luxury%20Mustard%203-Piece%20Lawn%20Suit.">Order Now</a><a class="btn" href="#shop">Add to Cart</a></div></div></section>
+
+<section id="shop"><div class="section-head reveal"><div class="eyebrow">Shop the latest</div><h2>SHOP THE LATEST</h2><p>Premium fashion at accessible prices.</p></div>
+<div class="products">
+<script>
+const products=[
+['Mustard Luxury Lawn','Rs. 2,499'],['Rose Embroidered Lawn','Rs. 2,799'],['Black Premium Embroidered Suit','Rs. 3,199'],['Ivory Festive 3-Piece','Rs. 3,499'],['Champagne Lawn Collection','Rs. 2,699'],['Maroon Festive Edit','Rs. 3,599']
+];
+document.write(products.map((p,i)=>`<article class="card reveal"><div class="card-img"><button class="wish" onclick="this.textContent=this.textContent==='♡'?'♥':'♡'">♡</button></div><div class="card-body"><h3>${p[0]}</h3><p>Premium women's fashion</p><div class="card-price">${p[1]}</div><button class="btn dark" style="margin-top:15px;width:100%" onclick="order('${p[0]}','${p[1]}')">Order on WhatsApp</button></div></article>`).join(''));
+</script>
+</div></section>
+
+<section class="detail"><div class="detail-wrap"><div class="detail-visual reveal"><div class="suit"></div></div><div class="reveal"><div class="section-head"><div class="eyebrow">Product Details</div><h2>DETAILS THAT MAKE THE DIFFERENCE</h2></div><div class="hotspots"><div class="hotspot"><strong>Premium Lawn</strong><p>Soft, comfortable and elegant fabric.</p></div><div class="hotspot"><strong>Detailed Embroidery</strong><p>Intricate finishing designed for a premium look.</p></div><div class="hotspot"><strong>Laser-Cut Dupatta</strong><p>Elegant detailing with a refined finish.</p></div><div class="hotspot"><strong>Dyed Trouser</strong><p>Complete coordinated 3-piece look.</p></div></div></div></div></section>
+
+<section><div class="section-head reveal"><div class="eyebrow">The difference</div><h2>WHY STYLE AVENUE?</h2></div><div class="features"><div class="feature reveal"><span>✦</span><h3>Premium Quality</h3><p>Carefully selected fabrics and finishing.</p></div><div class="feature reveal"><span>◇</span><h3>Affordable Luxury</h3><p>Premium fashion at accessible prices.</p></div><div class="feature reveal"><span>♧</span><h3>Nationwide Delivery</h3><p>Delivery available across Pakistan.</p></div><div class="feature reveal"><span>♡</span><h3>Customer First</h3><p>A shopping experience designed around you.</p></div></div></section>
+
+<section class="story" id="about"><div class="story-img"></div><div class="story-copy"><div class="eyebrow">Our Story</div><h2>THE STYLE AVENUE STORY</h2><p>Style Avenue is created for women who believe fashion is more than clothing. It is confidence, individuality and the freedom to express your personality.</p><p>Our collections bring together elegant Pakistani fashion, premium details and accessible prices — making sophisticated style effortless for every occasion.</p><a class="btn" href="#contact">Discover Our Story</a></div></section>
+
+<section class="offer"><div class="reveal"><div class="eyebrow">Special Offer</div><h2>YOUR NEXT FAVORITE LOOK IS HERE</h2><p>Discover premium fashion at prices you'll love.</p><div class="discount">UP TO 30% OFF</div><a class="btn dark" href="#shop">Shop Sale</a></div></section>
+
+<section id="new"><div class="section-head reveal"><div class="eyebrow">Just dropped</div><h2>NEW ARRIVALS</h2><p>Fresh styles. New silhouettes. Endless possibilities.</p></div><div class="products">
+<div class="card reveal"><div class="card-img"><span class="badge" style="position:absolute;top:15px;left:15px;z-index:2">NEW</span></div><div class="card-body"><h3>New Season Lawn</h3><p>Fresh premium look</p><div class="card-price">Coming Soon</div></div></div>
+<div class="card reveal"><div class="card-img"><span class="badge" style="position:absolute;top:15px;left:15px;z-index:2">NEW</span></div><div class="card-body"><h3>Signature Edit</h3><p>Elegant everyday style</p><div class="card-price">Coming Soon</div></div></div>
+<div class="card reveal"><div class="card-img"><span class="badge" style="position:absolute;top:15px;left:15px;z-index:2">NEW</span></div><div class="card-body"><h3>Festive Collection</h3><p>Statement fashion</p><div class="card-price">Coming Soon</div></div></div>
+</div></section>
+
+<section><div class="section-head reveal"><div class="eyebrow">Fashion Editorial</div><h2>STYLE YOUR MOMENT</h2><p>From everyday elegance to unforgettable occasions.</p></div><div class="social-grid"><div class="social"></div><div class="social"></div><div class="social"></div><div class="social"></div><div class="social"></div><div class="social"></div></div></section>
+
+<section class="reviews"><div class="section-head reveal"><div class="eyebrow">Customer love</div><h2>LOVED BY STYLE LOVERS</h2></div><div class="review-grid"><div class="review reveal"><div class="stars">★★★★★</div><p>“Beautiful fabric and even better than I expected.”</p><small>— Verified Customer</small></div><div class="review reveal"><div class="stars">★★★★★</div><p>“The embroidery details are gorgeous. Highly recommended.”</p><small>— Verified Customer</small></div><div class="review reveal"><div class="stars">★★★★★</div><p>“Excellent quality for the price.”</p><small>— Verified Customer</small></div></div></section>
+
+<section><div class="section-head reveal" style="text-align:center;margin-left:auto;margin-right:auto"><div class="eyebrow">Social</div><h2>FOLLOW THE AVENUE</h2><p>Style inspiration, new arrivals and exclusive offers.</p><a class="btn dark" href="#">Follow Us</a></div></section>
+
+<section class="contact" id="contact"><div class="reveal"><div class="eyebrow">Let's connect</div><h2>READY TO MAKE IT YOURS?</h2><p>Order your favorite Style Avenue look directly through WhatsApp.</p><div class="phone">0325 4809250</div><a class="btn" target="_blank" href="https://wa.me/923254809250?text=Hello%20Style%20Avenue%2C%20I%20would%20like%20to%20order%20a%20product.%20Please%20share%20the%20available%20collection%20and%20details.">Order on WhatsApp</a><p>Clothes | Watches | Bags | Accessories</p></div></section>
+</main>
+
+<footer class="footer"><div><div class="logo">STYLE AVENUE</div><p>Elegance in Every Detail.</p><div class="newsletter"><input placeholder="Enter your email"><button>Subscribe</button></div></div><div><h3>Shop</h3><a href="#shop">Shop</a><a href="#new">New Arrivals</a><a href="#collections">Collections</a></div><div><h3>Help</h3><a href="#contact">Contact</a><a href="#">Shipping Policy</a><a href="#">Returns Policy</a></div><div><h3>Legal</h3><a href="#">Privacy Policy</a><a href="#">Terms & Conditions</a><p>© 2026 Style Avenue. All Rights Reserved.</p></div></footer>
+
+<script>
+const nav=document.getElementById('nav');
+window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>50));
+const observer=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')}),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+function order(name,price){
+const text=`Hello Style Avenue, I would like to order ${name} (${price}). Please share the available details.`;
+window.open('https://wa.me/923254809250?text='+encodeURIComponent(text),'_blank');
+}
+document.querySelectorAll('.card-img').forEach(card=>{
+card.addEventListener('mousemove',e=>{const r=card.getBoundingClientRect();card.style.transform=`perspective(700px) rotateX(${-(e.clientY-r.top-r.height/2)/25}deg) rotateY(${(e.clientX-r.left-r.width/2)/25}deg)`});
+card.addEventListener('mouseleave',()=>card.style.transform='');
+});
+</script>
+</body>
+</html>
